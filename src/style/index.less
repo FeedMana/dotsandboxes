@@ -1,0 +1,251 @@
+body {
+  font: 18px 'Century Gothic', Futura, sans-serif;
+  margin: 20px;
+  // background: rgb(48, 48, 48);
+  // background: linear-gradient(
+  //   0deg,
+  //   rgba(48, 48, 48, 1) 0%,
+  //   rgba(34, 34, 34, 1) 51%,
+  //   rgba(31, 31, 31, 1) 100%
+  // );
+
+  background: #297ee6;
+  color: #f8f8ff;
+}
+
+ol,
+ul {
+  padding-left: 30px;
+}
+
+.row {
+}
+
+.board-row:after {
+  // clear: both;
+  // content: '';
+  // display: table;
+}
+
+.status {
+  margin-bottom: 10px;
+  white-space: pre-wrap;
+  font-size: 20pt;
+  padding-top: 20px;
+}
+
+.text-pulse {
+  transform: scale(1);
+  animation: pulse 0.1s 1;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.square {
+  background: #fff;
+  // color: #f8f8ff;
+  background: #297ee6;
+  // background: #297ee6;
+  border: 0px dotted black;
+  border-radius: 4px;
+  // float: left;
+  font-size: 48px;
+  font-weight: bold;
+  line-height: 66px;
+  height: @dimensions;
+  width: @dimensions;
+  margin-right: 0px;
+  margin-top: 0px;
+  padding: 0;
+  text-align: center;
+  vertical-align: top;
+
+  /* opacity:0; */
+}
+
+.square[value] {
+  opacity: 1;
+}
+
+.square:focus {
+  outline: none;
+}
+
+.verti-line {
+  // width: 8px;
+  // height: 66px;
+
+  width: @shortSide;
+  height: @dimensions;
+
+  margin-top: @spacer / 4;
+  margin-bottom: @spacer / 4;
+  // float: left;
+  padding: 0;
+  background: #f8f8ff;
+  text-align: center;
+  border: 0px solid red;
+  border-radius: 10px;
+  &:hover {
+    transition: 0.07s;
+    background: #b0b0b4;
+  }
+}
+
+.hori-line {
+  // width: 68px;
+  // height: 8px;
+  width: @dimensions;
+  height: @shortSide;
+  /* Changer from "@spacer" to @shortSide and remove "margin-right" to view previous version */
+  margin-left: @spacer;
+  margin-right: @spacer;
+  // float: left;
+  padding: 0;
+  background: #f8f8ff;
+  // text-align: center;
+  border: 0px solid red;
+  border-radius: 10px;
+}
+
+.hori-row {
+  height: @shortSide;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.verti-row {
+  height: @dimensions;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.greenLine:hover {
+  transition: 0.1s;
+  background: #68c482;
+}
+
+.orangeLine:hover {
+  transition: 0.1s;
+  background: #ff9e5e;
+}
+
+@dimensions: 100px;
+@shortSide: @dimensions / 6;
+@spacer: @shortSide / 2;
+
+@media only screen and (max-width: 480px), screen and (max-height: 490px) {
+  @dimensions: 70px;
+  @shortSide: @dimensions / 6;
+  @spacer: @shortSide / 2;
+  .hori-line {
+    width: @dimensions;
+    height: @shortSide;
+    margin-left: @spacer;
+    margin-right: @spacer;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  .verti-line {
+    height: @dimensions;
+    width: @shortSide;
+    margin-top: @spacer / 4;
+    margin-bottom: @spacer / 4;
+  }
+
+  .hori-row {
+    height: @shortSide;
+  }
+
+  .verti-row {
+    height: @dimensions;
+  }
+
+  .square {
+    width: @dimensions;
+    height: @dimensions;
+  }
+  .status {
+    padding-top: 0px;
+  }
+}
+
+.dot {
+  background: blue;
+  // height: 8px;
+  width: @shortSide;
+  // height: 100px;
+  // width: 20px;
+  border-radius: 10px;
+  // float: left;
+}
+
+.spacer {
+  /* width:1px; */
+  /* height:4px; */
+  // float: left;
+}
+
+.line:focus {
+  outline: none;
+}
+
+.kbd-navigation .square:focus {
+  background: #ddd;
+}
+
+.game {
+  // display: flex;
+  // flex-direction: row;
+  // text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.game-info {
+  margin-left: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.game-board {
+  background: none;
+  // border: 1px dotted black;
+  border-radius: 4px;
+  // width: 238px;
+  // margin-left: auto;
+  // margin-right: auto;
+}
+
+@media screen and (max-width: 576px) {
+  .game-info {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+// .test-board {
+//   flex-direction: column;
+//   align-items: flex-end;
+//   // float: right;
+// }
+
+// .test-info {
+//   justify-content: left;
+//   flex-direction: flex-end;
+//   display: flex;
+// }

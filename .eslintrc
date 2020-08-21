@@ -1,0 +1,23 @@
+{
+  "parser": "babel-eslint",
+  "extends": "react",
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "new-cap": 0,
+    "camelcase": 0,
+    "no-empty": 0,
+    "eqeqeq": 0,
+    "react/prop-types": 0,
+    "space-before-function-paren": 0,
+    "indent": 0,
+    "react/self-closing-comp": 0
+  }
+}
